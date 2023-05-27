@@ -2,15 +2,15 @@ Each user need to build the docker image by themselves, see https://vsupalov.com
 
 Please replace repo, tag, xxx with your own values
 
-to build docker image:
+to build docker image (you may want to replace `repo` and `tag`):
 
 ```docker build - < Dockerfile -t repo:tag --build-arg USER_ID=$(id -u) --build-arg GROUP_ID=$(id -g)```
 
-to run docker container:
+to run docker container (replace `repo` and `tag` with the ones you speficied. Also you may want to replace `xxx`):
 
 ```docker run --gpus all --rm -itd --name xxx -v $(pwd):/workspace/ repo:tag bash```
 
-to attach to docker container:
+to attach to docker container (replace `xxx` with the one you specified):
 
 ```docker attach xxx```
 
