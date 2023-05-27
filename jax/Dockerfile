@@ -7,11 +7,9 @@ ARG GROUP_ID
 RUN addgroup --gid $GROUP_ID user
 RUN adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID user
 
-RUN apt-get update && apt-get install -y \
-  git \
-  python3 \
-  python3-pip \
-  && rm -rf /var/lib/apt/lists/*
+RUN apt-get update
+RUN apt-get install -y git python3 python3-pip
+RUN rm -rf /var/lib/apt/lists/*
 
 USER user
 RUN echo 'export PATH=$HOME/.local/bin:$PATH' >> $HOME/.bashrc
