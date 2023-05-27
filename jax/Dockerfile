@@ -8,11 +8,13 @@ RUN addgroup --gid $GROUP_ID user
 RUN adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID user
 
 RUN apt-get update
-RUN apt-get install -y git python3 python3-pip
+RUN apt-get install -y --fix-missing git python3 python3-pip
 RUN rm -rf /var/lib/apt/lists/*
 
 USER user
 RUN echo 'export PATH=$HOME/.local/bin:$PATH' >> $HOME/.bashrc
+
+RUN export PIP_DEFAULT_TIMEOUT=100
 
 RUN pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple
 
