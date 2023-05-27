@@ -14,11 +14,11 @@ to attach to docker container (replace `xxx` with the one you specified):
 
 ```docker attach xxx```
 
-if too slow, try adding
+I added this to avoid disruption due to timeout:
 
 ```RUN export PIP_DEFAULT_TIMEOUT=100```
 
-I added this to Dockerfile to accelerate pip install:
+I added this to accelerate pip install:
 
 ```-i https://pypi.tuna.tsinghua.edu.cn/simple```
 
