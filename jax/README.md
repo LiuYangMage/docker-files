@@ -6,7 +6,7 @@ to build docker image (you may want to replace `repo` and `tag`):
 
 ```docker build - < Dockerfile -t repo:tag --build-arg USER_ID=$(id -u) --build-arg GROUP_ID=$(id -g)```
 
-to run docker container (replace `repo` and `tag` with the ones you speficied. Also you may want to replace `xxx`):
+to run docker container (Please get into your preferred directory first. replace `repo` and `tag` with the ones you speficied. Also you may want to replace `xxx`):
 
 ```docker run --gpus all --rm -itd --name xxx -v $(pwd):/workspace/ repo:tag bash```
 
