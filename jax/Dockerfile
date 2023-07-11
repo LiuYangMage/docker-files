@@ -20,6 +20,7 @@ RUN pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 RUN pip install --upgrade "jax[cuda11_pip]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html -i https://pypi.tuna.tsinghua.edu.cn/simple
 RUN pip install numpy scipy absl-py dm-haiku flax einops einshape jupyter matplotlib opt-einsum optax tensorflow pytz tqdm gymnasium gymnax brax pgx jumanji evosax distrax -i https://pypi.tuna.tsinghua.edu.cn/simple
-RUN pip install torch torchvision torchaudio transformers sentence-transformers --index-url https://download.pytorch.org/whl/cu118
+RUN pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+RUN pip install transformers sentence-transformers
 
 WORKDIR /workspace
